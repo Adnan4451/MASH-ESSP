@@ -1,0 +1,38 @@
+﻿@model ESSPCORE.Reporting.VMLeaveBalance
+@using (Html.BeginForm(null, null, FormMethod.Post, new { name = "formCreateID", id = "formCreateID" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="table-responsive">
+        <table class="table table-condensed table-bordered table-sm table-striped ">
+            <thead>
+                <tr>
+                    <th class="bg-blue-800 small">Leave Balances</th>
+                    <th class="bg-grey small">Annual</th>
+                    <th class="bg-grey small">Accumulative</th>
+                    <th class="bg-grey small">Casual</th>
+                    <th class="bg-grey small">Sick</th>
+                    <th class="bg-grey small">Comp. Payed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th class="bg-blue-800 small">Total</th>
+                    <td class="small">@Model.TotalAL</td>
+                    <td class="small">@Model.TotalAccum</td>
+                    <td class="small">@Model.TotalCL</td>
+                    <td class="small">@Model.TotalSL</td>
+                    <td class="small">@Model.TotalCPL</td>
+                </tr>
+                <tr>
+                    <th class="bg-blue-800 small">Balance</th>
+                    <td class="small">@Model.BalanceAL</td>
+                    <td class="small">@Model.BalanceAccum</td>
+                    <td class="small">@Model.BalanceCL</td>
+                    <td class="small">@Model.BalanceSL</td>
+                    <td class="small">@Model.BalanceCPL</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+}
